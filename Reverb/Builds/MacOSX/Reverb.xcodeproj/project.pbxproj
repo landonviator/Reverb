@@ -74,6 +74,7 @@
 		206394557D5F87980B3069E6 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = /Users/land00m/Documents/JUCE/modules/juce_graphics; sourceTree = "<absolute>"; };
 		24AE43D18BD81621212F1D51 /* CoreAudioKit.framework */ /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 		27D2F4D7DE86FDCCE06791E0 /* include_juce_gui_extra.mm */ /* include_juce_gui_extra.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_extra.mm; path = ../../JuceLibraryCode/include_juce_gui_extra.mm; sourceTree = SOURCE_ROOT; };
+		29F6D829990EF7963EC540C3 /* ViatorSlider.h */ /* ViatorSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViatorSlider.h; path = ../../Source/ViatorSlider.h; sourceTree = SOURCE_ROOT; };
 		2F8C413D4755E774F83D4E76 /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = /Users/land00m/Documents/JUCE/modules/juce_gui_extra; sourceTree = "<absolute>"; };
 		3040CB8CA582A3807FAFEE17 /* include_juce_audio_plugin_client_VST3.cpp */ /* include_juce_audio_plugin_client_VST3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_VST3.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp; sourceTree = SOURCE_ROOT; };
 		31E9B2F9E0B02CB0777B3BBF /* juce_events */ /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = /Users/land00m/Documents/JUCE/modules/juce_events; sourceTree = "<absolute>"; };
@@ -221,6 +222,7 @@
 		47C9BA1AE301BF4800E58289 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				29F6D829990EF7963EC540C3,
 				02C8CB5F089B4FDAF09261CF,
 				5AA6778C5C901F057059E85A,
 				476181AF2A9133907D7C4B8A,

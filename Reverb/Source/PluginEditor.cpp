@@ -25,7 +25,7 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     filterEngageButton.setColour(0x1000100, juce::Colour::fromFloatRGBA(0, 0, 0, .25));
     filterEngageButton.setColour(0x1000c00, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
     filterEngageButton.setColour(0x1000101, juce::Colour::fromFloatRGBA(0, 0, 0, .15));
-    filterEngageButton.setColour(0x1000102, juce::Colour::fromFloatRGBA(1, 1, 1, 0.35));
+    filterEngageButton.setColour(0x1000102, juce::Colour::fromFloatRGBA(1, 1, 1, 0.25));
     filterEngageButton.setColour(0x1000103, juce::Colour::fromFloatRGBA(.23, .77, 1, 0.5));
     filterEngageButton.setColour(0x1000103, juce::Colour::fromFloatRGBA(0.392f, 0.584f, 0.929f, 0.5f));
     
@@ -35,7 +35,7 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     filterModeButton.setColour(0x1000100, juce::Colour::fromFloatRGBA(0, 0, 0, .25));
     filterModeButton.setColour(0x1000c00, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
     filterModeButton.setColour(0x1000101, juce::Colour::fromFloatRGBA(0, 0, 0, .15));
-    filterModeButton.setColour(0x1000102, juce::Colour::fromFloatRGBA(1, 1, 1, 0.35));
+    filterModeButton.setColour(0x1000102, juce::Colour::fromFloatRGBA(1, 1, 1, 0.25));
     filterModeButton.setColour(0x1000103, juce::Colour::fromFloatRGBA(.23, .77, 1, 0.5));
     filterModeButton.setColour(0x1000103, juce::Colour::fromFloatRGBA(0.392f, 0.584f, 0.929f, 0.5f));
     
@@ -142,15 +142,74 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     wetSlider.setRange(0.0, 100.0, 1.0);
     wetSlider.setComponentEffect(&dialShadow);
     
-//    addAndMakeVisible(&cutoffLabel);
-//    cutoffLabel.setText("Cutoff", juce::dontSendNotification);
-//    cutoffLabel.setJustificationType(juce::Justification::centred);
-//    cutoffLabel.setColour(0x1000280, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
-//    cutoffLabel.setColour(0x1000281, juce::Colour::fromFloatRGBA(0.392f, 0.584f, 0.929f, 0.5));
-//    cutoffLabel.setColour(0x1000282, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
-//    cutoffLabel.attachToComponent(&cutoffSlider, false);
-
+    addAndMakeVisible(&cutoffLabel);
+    cutoffLabel.setText("Cutoff", juce::dontSendNotification);
+    cutoffLabel.setJustificationType(juce::Justification::centred);
+    cutoffLabel.setColour(0x1000280, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    cutoffLabel.setColour(0x1000281, juce::Colour::fromFloatRGBA(1, 1, 1, 0.18));
+    cutoffLabel.setColour(0x1000282, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    cutoffLabel.attachToComponent(&cutoffSlider, false);
     
+    addAndMakeVisible(&resonanceLabel);
+    resonanceLabel.setText("Resonance", juce::dontSendNotification);
+    resonanceLabel.setJustificationType(juce::Justification::centred);
+    resonanceLabel.setColour(0x1000280, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    resonanceLabel.setColour(0x1000281, juce::Colour::fromFloatRGBA(1, 1, 1, 0.18));
+    resonanceLabel.setColour(0x1000282, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    resonanceLabel.attachToComponent(&resonanceSlider, false);
+    
+    addAndMakeVisible(&driveLabel);
+    driveLabel.setText("Drive", juce::dontSendNotification);
+    driveLabel.setJustificationType(juce::Justification::centred);
+    driveLabel.setColour(0x1000280, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    driveLabel.setColour(0x1000281, juce::Colour::fromFloatRGBA(1, 1, 1, 0.18));
+    driveLabel.setColour(0x1000282, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    driveLabel.attachToComponent(&driveSlider, false);
+    
+    addAndMakeVisible(&roomLabel);
+    roomLabel.setText("Room Size", juce::dontSendNotification);
+    roomLabel.setJustificationType(juce::Justification::centred);
+    roomLabel.setColour(0x1000280, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    roomLabel.setColour(0x1000281, juce::Colour::fromFloatRGBA(1, 1, 1, 0.18));
+    roomLabel.setColour(0x1000282, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    roomLabel.attachToComponent(&roomSizeSlider, false);
+    
+    addAndMakeVisible(&dampingLabel);
+    dampingLabel.setText("Damping", juce::dontSendNotification);
+    dampingLabel.setJustificationType(juce::Justification::centred);
+    dampingLabel.setColour(0x1000280, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    dampingLabel.setColour(0x1000281, juce::Colour::fromFloatRGBA(1, 1, 1, 0.18));
+    dampingLabel.setColour(0x1000282, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    dampingLabel.attachToComponent(&dampingSlider, false);
+    
+    addAndMakeVisible(&widthLabel);
+    widthLabel.setText("Width", juce::dontSendNotification);
+    widthLabel.setJustificationType(juce::Justification::centred);
+    widthLabel.setColour(0x1000280, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    widthLabel.setColour(0x1000281, juce::Colour::fromFloatRGBA(1, 1, 1, 0.18));
+    widthLabel.setColour(0x1000282, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    widthLabel.attachToComponent(&widthSlider, false);
+    
+    addAndMakeVisible(&dryLabel);
+    dryLabel.setText("Dry", juce::dontSendNotification);
+    dryLabel.setJustificationType(juce::Justification::centred);
+    dryLabel.setColour(0x1000280, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    dryLabel.setColour(0x1000281, juce::Colour::fromFloatRGBA(1, 1, 1, 0.18));
+    dryLabel.setColour(0x1000282, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    dryLabel.attachToComponent(&drySlider, false);
+    
+    addAndMakeVisible(&wetLabel);
+    wetLabel.setText("Wet", juce::dontSendNotification);
+    wetLabel.setJustificationType(juce::Justification::centred);
+    wetLabel.setColour(0x1000280, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    wetLabel.setColour(0x1000281, juce::Colour::fromFloatRGBA(1, 1, 1, 0.18));
+    wetLabel.setColour(0x1000282, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
+    wetLabel.attachToComponent(&wetSlider, false);
+    
+    //Making the window resizable by aspect ratio and setting size
+    AudioProcessorEditor::setResizable(true, true);
+    AudioProcessorEditor::setResizeLimits(750, 250, 1200, 400);
+    AudioProcessorEditor::getConstrainer()->setFixedAspectRatio(3.0);
     setSize (900, 300);
 }
 
@@ -172,8 +231,8 @@ void ReverbAudioProcessorEditor::paint (juce::Graphics& g)
     juce::Rectangle<int> background = AudioProcessorEditor::getLocalBounds();
     g.setGradientFill(juce::ColourGradient::vertical(juce::Colour::fromFloatRGBA(0.18f, 0.20f, 0.24f, 1.0), 300 * .01, juce::Colour::fromFloatRGBA(0.12f, 0.14f, 0.18f, 1.0), 300 * .99));
     g.fillRect(background);
-    g.setColour (juce::Colours::white.darker(1.0));
-    g.setFont (18.0f);
+    g.setColour (juce::Colours::white.withAlpha(0.18f));
+    g.setFont (16.0f);
     g.drawFittedText ("Viator Reverb v1.0.0", 12, 12, AudioProcessorEditor::getWidth(), AudioProcessorEditor::getHeight(), juce::Justification::topLeft, 1);
        
 }
