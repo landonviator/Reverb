@@ -10,10 +10,40 @@
 
 #include <JuceHeader.h>
 
+#define filterEngageId "filter engage"
+#define filterEngageName "Filter Engage"
+
+#define filterModeId "filter mode"
+#define filterModeName "Filter Mode"
+
+#define cutoffSliderId "cutoff"
+#define cutoffSliderName "Cutoff"
+
+#define resonanceSliderId "resonance"
+#define resonanceSliderName "Resonance"
+
+#define driveSliderId "drive"
+#define driveSliderName "Drive"
+
+#define roomSizeSliderId "room size"
+#define roomSizeSliderName "Room Size"
+
+#define dampingSliderId "damping"
+#define dampingSliderName "Damping"
+
+#define widthSliderId "width"
+#define widthSliderName "Width"
+
+#define drySliderId "dry"
+#define drySliderName "Dry"
+
+#define wetSliderId "wet"
+#define wetSliderName "Wet"
+
 //==============================================================================
 /**
 */
-class ReverbAudioProcessor  : public juce::AudioProcessor
+class ReverbAudioProcessor  : public juce::AudioProcessor, public juce::AudioProcessorValueTreeState::Listener
 {
 public:
     //==============================================================================
@@ -52,8 +82,12 @@ public:
     //==============================================================================
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
+    
+    juce::AudioProcessorValueTreeState treeState;
+    juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
 
 private:
+    void parameterChanged (const juce::String& parameterID, float newValue) override;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ReverbAudioProcessor)
 };

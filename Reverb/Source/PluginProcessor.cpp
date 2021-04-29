@@ -19,13 +19,34 @@ ReverbAudioProcessor::ReverbAudioProcessor()
                       #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), false)
                      #endif
-                       )
+                       ),
+treeState (*this, nullptr, "PARAMETER", createParameterLayout())
 #endif
 {
+    treeState.addParameterListener (filterEngageId, this);
+    treeState.addParameterListener (filterModeId, this);
+    treeState.addParameterListener (cutoffSliderId, this);
+    treeState.addParameterListener (resonanceSliderId, this);
+    treeState.addParameterListener (driveSliderId, this);
+    treeState.addParameterListener (roomSizeSliderId, this);
+    treeState.addParameterListener (dampingSliderId, this);
+    treeState.addParameterListener (widthSliderId, this);
+    treeState.addParameterListener (drySliderId, this);
+    treeState.addParameterListener (wetSliderId, this);
 }
 
 ReverbAudioProcessor::~ReverbAudioProcessor()
 {
+    treeState.removeParameterListener (filterEngageId, this);
+    treeState.removeParameterListener (filterModeId, this);
+    treeState.removeParameterListener (cutoffSliderId, this);
+    treeState.removeParameterListener (resonanceSliderId, this);
+    treeState.removeParameterListener (driveSliderId, this);
+    treeState.removeParameterListener (roomSizeSliderId, this);
+    treeState.removeParameterListener (dampingSliderId, this);
+    treeState.removeParameterListener (widthSliderId, this);
+    treeState.removeParameterListener (drySliderId, this);
+    treeState.removeParameterListener (wetSliderId, this);
 }
 
 //==============================================================================
@@ -181,6 +202,41 @@ void ReverbAudioProcessor::setStateInformation (const void* data, int sizeInByte
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
+}
+
+void ReverbAudioProcessor::parameterChanged(const juce::String &parameterID, float newValue){
+    
+    
+}
+
+juce::AudioProcessorValueTreeState::ParameterLayout ReverbAudioProcessor::createParameterLayout()
+{
+    std::vector <std::unique_ptr<juce::RangedAudioParameter>> params;
+    params.reserve(10);
+    
+    auto filterEngageParam = std::make_unique<juce::AudioParameterInt>(filterEngageId, filterEngageName, 0, 1, 0);
+    auto filterModeParam = std::make_unique<juce::AudioParameterInt>(filterModeId, filterModeName, 0, 1, 0);
+    auto cutoffParam = std::make_unique<juce::AudioParameterFloat>(cutoffSliderId, cutoffSliderName, 20.0f, 20000.0f, 20000.0f);
+    auto resonanceParam = std::make_unique<juce::AudioParameterFloat>(resonanceSliderId, resonanceSliderName, 0.0f, 100.0f, 0.0f);
+    auto driveParam = std::make_unique<juce::AudioParameterFloat>(driveSliderId, driveSliderName, 0.0f, 24.0f, 0.0f);
+    auto roomSizeParam = std::make_unique<juce::AudioParameterFloat>(roomSizeSliderId, roomSizeSliderName, 0.0f, 100.0f, 0.0f);
+    auto dampingParam = std::make_unique<juce::AudioParameterFloat>(dampingSliderId, dampingSliderName, 0.0f, 100.0f, 0.0f);
+    auto widthParam = std::make_unique<juce::AudioParameterFloat>(widthSliderId, widthSliderName, 0.0f, 100.0f, 0.0f);
+    auto dryParam = std::make_unique<juce::AudioParameterFloat>(drySliderId, drySliderName, 0.0f, 100.0f, 0.0f);
+    auto wetParam = std::make_unique<juce::AudioParameterFloat>(wetSliderId, wetSliderName, 0.0f, 100.0f, 0.0f);
+    
+    params.push_back(std::move(filterEngageParam));
+    params.push_back(std::move(filterModeParam));
+    params.push_back(std::move(cutoffParam));
+    params.push_back(std::move(resonanceParam));
+    params.push_back(std::move(driveParam));
+    params.push_back(std::move(roomSizeParam));
+    params.push_back(std::move(dampingParam));
+    params.push_back(std::move(widthParam));
+    params.push_back(std::move(dryParam));
+    params.push_back(std::move(wetParam));
+    
+    return { params.begin(), params.end() };
 }
 
 //==============================================================================
