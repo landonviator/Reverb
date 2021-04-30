@@ -114,8 +114,37 @@ void ReverbAudioProcessor::changeProgramName (int index, const juce::String& new
 //==============================================================================
 void ReverbAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    juce::dsp::ProcessSpec spec;
+    spec.maximumBlockSize = samplesPerBlock;
+    spec.sampleRate = sampleRate;
+    spec.numChannels = getTotalNumOutputChannels();
+    
+    ladderProcessor.prepare(spec);
+    ladderProcessor.reset();
+    ladderProcessor.setCutoffFrequencyHz(*treeState.getRawParameterValue(cutoffSliderId));
+    ladderProcessor.setResonance(*treeState.getRawParameterValue(resonanceSliderId) * 0.01);
+    ladderProcessor.setDrive(pow(10, *treeState.getRawParameterValue(driveSliderId) / 20));
+    
+    if (*treeState.getRawParameterValue(filterEngageId) == 0){
+        ladderProcessor.setEnabled(false);
+    } else {
+        ladderProcessor.setEnabled(true);
+    }
+    
+    if (*treeState.getRawParameterValue(filterModeId) == 0){
+        ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF12);
+    } else {
+        ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF24);
+    }
+    
+    reverbProcessor.prepare(spec);
+    reverbProcessor.reset();
+    reverbParams.roomSize = *treeState.getRawParameterValue(roomSizeSliderId) * .01;
+    reverbParams.damping = *treeState.getRawParameterValue(dampingSliderId) * .01;
+    reverbParams.width = *treeState.getRawParameterValue(widthSliderId) * .01;
+    reverbParams.dryLevel = *treeState.getRawParameterValue(drySliderId) * .01;
+    reverbParams.wetLevel = *treeState.getRawParameterValue(wetSliderId) * .01;
+    reverbProcessor.setParameters(reverbParams);
 }
 
 void ReverbAudioProcessor::releaseResources()
@@ -156,27 +185,15 @@ void ReverbAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
-    // In case we have more outputs than inputs, this code clears any output
-    // channels that didn't contain input data, (because these aren't
-    // guaranteed to be empty - they may contain garbage).
-    // This is here to avoid people getting screaming feedback
-    // when they first compile a plugin, but obviously you don't need to keep
-    // this code if your algorithm always overwrites all the output channels.
+    
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
-    // This is the place where you'd normally do the guts of your plugin's
-    // audio processing...
-    // Make sure to reset the state if your inner loop is processing
-    // the samples and the outer loop is handling the channels.
-    // Alternatively, you can process the samples with the channels
-    // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer (channel);
+    juce::dsp::AudioBlock<float> audioBlock {buffer};
 
-        // ..do something to the data...
-    }
+    ladderProcessor.process(juce::dsp::ProcessContextReplacing<float>(audioBlock));
+    reverbProcessor.process(juce::dsp::ProcessContextReplacing<float>(audioBlock));
+
 }
 
 //==============================================================================
@@ -193,20 +210,56 @@ juce::AudioProcessorEditor* ReverbAudioProcessor::createEditor()
 //==============================================================================
 void ReverbAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
-    // You should use this method to store your parameters in the memory block.
-    // You could do that either as raw data, or use the XML or ValueTree classes
-    // as intermediaries to make it easy to save and load complex data.
+    juce::MemoryOutputStream stream(destData, false);
+    treeState.state.writeToStream (stream);
 }
 
 void ReverbAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    // You should use this method to restore your parameters from this memory block,
-    // whose contents will have been created by the getStateInformation() call.
+    juce::ValueTree tree = juce::ValueTree::readFromData (data, size_t (sizeInBytes));
+        
+        if (tree.isValid())
+        {
+            treeState.state = tree;
+        }
 }
 
 void ReverbAudioProcessor::parameterChanged(const juce::String &parameterID, float newValue){
-    
-    
+    if (parameterID == cutoffSliderId){
+        ladderProcessor.setCutoffFrequencyHz(newValue);
+    } else if (parameterID == resonanceSliderId){
+        ladderProcessor.setResonance(newValue * 0.01);
+    } else if (parameterID == driveSliderId){
+        ladderProcessor.setDrive(pow(10, newValue / 20));
+    } else if (parameterID == filterEngageId){
+        
+        if (newValue == 0){
+            ladderProcessor.setEnabled(false);
+        } else {
+            ladderProcessor.setEnabled(true);
+        }
+    } else if (parameterID == filterModeId){
+        if (newValue == 0){
+            ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF12);
+        } else {
+            ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF24);
+        }
+    } else if (parameterID == wetSliderId){
+        reverbParams.wetLevel = newValue * 0.01;
+        reverbProcessor.setParameters(reverbParams);
+    } else if (parameterID == drySliderId){
+        reverbParams.dryLevel = newValue * 0.01;
+        reverbProcessor.setParameters(reverbParams);
+    } else if (parameterID == roomSizeSliderId){
+        reverbParams.roomSize = newValue * 0.01;
+        reverbProcessor.setParameters(reverbParams);
+    } else if (parameterID == dampingSliderId){
+        reverbParams.damping = newValue * 0.01;
+        reverbProcessor.setParameters(reverbParams);
+    } else {
+        reverbParams.width = newValue * 0.01;
+        reverbProcessor.setParameters(reverbParams);
+    }
 }
 
 juce::AudioProcessorValueTreeState::ParameterLayout ReverbAudioProcessor::createParameterLayout()
@@ -214,16 +267,16 @@ juce::AudioProcessorValueTreeState::ParameterLayout ReverbAudioProcessor::create
     std::vector <std::unique_ptr<juce::RangedAudioParameter>> params;
     params.reserve(10);
     
-    auto filterEngageParam = std::make_unique<juce::AudioParameterInt>(filterEngageId, filterEngageName, 0, 1, 0);
+    auto filterEngageParam = std::make_unique<juce::AudioParameterInt>(filterEngageId, filterEngageName, 0, 1, 1);
     auto filterModeParam = std::make_unique<juce::AudioParameterInt>(filterModeId, filterModeName, 0, 1, 0);
-    auto cutoffParam = std::make_unique<juce::AudioParameterFloat>(cutoffSliderId, cutoffSliderName, 20.0f, 20000.0f, 20000.0f);
-    auto resonanceParam = std::make_unique<juce::AudioParameterFloat>(resonanceSliderId, resonanceSliderName, 0.0f, 100.0f, 0.0f);
+    auto cutoffParam = std::make_unique<juce::AudioParameterInt>(cutoffSliderId, cutoffSliderName, 20, 20000, 1200);
+    auto resonanceParam = std::make_unique<juce::AudioParameterInt>(resonanceSliderId, resonanceSliderName, 0, 100, 0);
     auto driveParam = std::make_unique<juce::AudioParameterFloat>(driveSliderId, driveSliderName, 0.0f, 24.0f, 0.0f);
-    auto roomSizeParam = std::make_unique<juce::AudioParameterFloat>(roomSizeSliderId, roomSizeSliderName, 0.0f, 100.0f, 0.0f);
-    auto dampingParam = std::make_unique<juce::AudioParameterFloat>(dampingSliderId, dampingSliderName, 0.0f, 100.0f, 0.0f);
-    auto widthParam = std::make_unique<juce::AudioParameterFloat>(widthSliderId, widthSliderName, 0.0f, 100.0f, 0.0f);
-    auto dryParam = std::make_unique<juce::AudioParameterFloat>(drySliderId, drySliderName, 0.0f, 100.0f, 0.0f);
-    auto wetParam = std::make_unique<juce::AudioParameterFloat>(wetSliderId, wetSliderName, 0.0f, 100.0f, 0.0f);
+    auto roomSizeParam = std::make_unique<juce::AudioParameterInt>(roomSizeSliderId, roomSizeSliderName, 0, 100, 50);
+    auto dampingParam = std::make_unique<juce::AudioParameterInt>(dampingSliderId, dampingSliderName, 0, 100, 50);
+    auto widthParam = std::make_unique<juce::AudioParameterInt>(widthSliderId, widthSliderName, 0, 100, 100);
+    auto dryParam = std::make_unique<juce::AudioParameterInt>(drySliderId, drySliderName, 0, 100, 0);
+    auto wetParam = std::make_unique<juce::AudioParameterInt>(wetSliderId, wetSliderName, 0, 100, 50);
     
     params.push_back(std::move(filterEngageParam));
     params.push_back(std::move(filterModeParam));

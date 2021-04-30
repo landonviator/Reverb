@@ -28,28 +28,32 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     filterEngageButton.setColour(0x1000102, juce::Colour::fromFloatRGBA(1, 1, 1, 0.25));
     filterEngageButton.setColour(0x1000103, juce::Colour::fromFloatRGBA(.23, .77, 1, 0.5));
     filterEngageButton.setColour(0x1000103, juce::Colour::fromFloatRGBA(0.392f, 0.584f, 0.929f, 0.5f));
+    filterEngageButtonAttach = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(audioProcessor.treeState, filterEngageId, filterEngageButton);
+
     
     addAndMakeVisible(&filterModeButton);
     filterModeButton.setClickingTogglesState(true);
-    filterModeButton.setButtonText("Mode");
+    filterModeButton.setButtonText("12/24 dB");
     filterModeButton.setColour(0x1000100, juce::Colour::fromFloatRGBA(0, 0, 0, .25));
     filterModeButton.setColour(0x1000c00, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
     filterModeButton.setColour(0x1000101, juce::Colour::fromFloatRGBA(0, 0, 0, .15));
     filterModeButton.setColour(0x1000102, juce::Colour::fromFloatRGBA(1, 1, 1, 0.25));
     filterModeButton.setColour(0x1000103, juce::Colour::fromFloatRGBA(.23, .77, 1, 0.5));
     filterModeButton.setColour(0x1000103, juce::Colour::fromFloatRGBA(0.392f, 0.584f, 0.929f, 0.5f));
+    filterModeButtonAttach = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(audioProcessor.treeState, filterModeId, filterModeButton);
     
     addAndMakeVisible(&cutoffSlider);
     cutoffSlider.setSliderStyle(juce::Slider::SliderStyle::RotaryVerticalDrag);
-    cutoffSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 72, 32);
+    cutoffSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 96, 32);
+    cutoffSlider.setTextValueSuffix(" Hz");
+    cutoffSliderAttach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, cutoffSliderId, cutoffSlider);
     cutoffSlider.setRange(20.0, 20000.0, 1.0);
+    cutoffSlider.setSkewFactorFromMidPoint(750);
     cutoffSlider.setColour(0x1001400, juce::Colour::fromFloatRGBA(1, 1, 1, 0.25f));
     cutoffSlider.setColour(0x1001700, juce::Colour::fromFloatRGBA(1, 1, 1, 0.0f));
     cutoffSlider.setColour(0x1001500, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
     cutoffSlider.setDoubleClickReturnValue(true, 0.0);
     cutoffSlider.setLookAndFeel(&customDial);
-    cutoffSlider.setTextValueSuffix(" Hz");
-    cutoffSlider.setSkewFactorFromMidPoint(750);
     cutoffSlider.setComponentEffect(&dialShadow);
     
     addAndMakeVisible(&roomSizeSlider);
@@ -63,6 +67,8 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     roomSizeSlider.setTextValueSuffix(" %");
     roomSizeSlider.setRange(0.0, 100.0, 1.0);
     roomSizeSlider.setComponentEffect(&dialShadow);
+    roomSizeSliderAttach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, roomSizeSliderId, roomSizeSlider);
+
     
     addAndMakeVisible(&resonanceSlider);
     resonanceSlider.setSliderStyle(juce::Slider::SliderStyle::RotaryVerticalDrag);
@@ -75,6 +81,7 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     resonanceSlider.setTextValueSuffix(" %");
     resonanceSlider.setRange(0.0, 100.0, 1.0);
     resonanceSlider.setComponentEffect(&dialShadow);
+    resonanceSliderAttach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, resonanceSliderId, resonanceSlider);
     
     addAndMakeVisible(&dampingSlider);
     dampingSlider.setSliderStyle(juce::Slider::SliderStyle::RotaryVerticalDrag);
@@ -87,6 +94,8 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     dampingSlider.setTextValueSuffix(" %");
     dampingSlider.setRange(0.0, 100.0, 1.0);
     dampingSlider.setComponentEffect(&dialShadow);
+    dampingSliderAttach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, dampingSliderId, dampingSlider);
+
     
     addAndMakeVisible(&driveSlider);
     driveSlider.setSliderStyle(juce::Slider::SliderStyle::RotaryVerticalDrag);
@@ -99,6 +108,8 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     driveSlider.setTextValueSuffix(" dB");
     driveSlider.setRange(0.0, 24.0, 0.5);
     driveSlider.setComponentEffect(&dialShadow);
+    driveSliderAttach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, driveSliderId, driveSlider);
+
 
     addAndMakeVisible(&widthSlider);
     widthSlider.setSliderStyle(juce::Slider::SliderStyle::RotaryVerticalDrag);
@@ -111,10 +122,12 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     widthSlider.setTextValueSuffix(" %");
     widthSlider.setRange(0.0, 100.0, 1.0);
     widthSlider.setComponentEffect(&dialShadow);
+    widthSliderAttach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, widthSliderId, widthSlider);
+
     
     addAndMakeVisible(&drySlider);
     drySlider.setSliderStyle(juce::Slider::SliderStyle::LinearVertical);
-    drySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 72, 32);
+    drySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 128, 32);
     drySlider.setColour(0x1001200, juce::Colour::fromFloatRGBA(0, 0, 0, 0.25f));
     drySlider.setColour(0x1001300, juce::Colour::fromFloatRGBA(0.392f, 0.584f, 0.929f, 1.0));
     drySlider.setColour(0x1001310, juce::Colour::fromFloatRGBA(0, 0, 0, 0.65));
@@ -126,10 +139,12 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     drySlider.setTextValueSuffix(" %");
     drySlider.setRange(0.0, 100.0, 1.0);
     drySlider.setComponentEffect(&dialShadow);
+    drySliderAttach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, drySliderId, drySlider);
+
     
     addAndMakeVisible(&wetSlider);
     wetSlider.setSliderStyle(juce::Slider::SliderStyle::LinearVertical);
-    wetSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 72, 32);
+    wetSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 128, 32);
     wetSlider.setColour(0x1001200, juce::Colour::fromFloatRGBA(0, 0, 0, 0.25f));
     wetSlider.setColour(0x1001300, juce::Colour::fromFloatRGBA(0.392f, 0.584f, 0.929f, 1.0));
     wetSlider.setColour(0x1001310, juce::Colour::fromFloatRGBA(0, 0, 0, 0.65));
@@ -141,6 +156,8 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     wetSlider.setTextValueSuffix(" %");
     wetSlider.setRange(0.0, 100.0, 1.0);
     wetSlider.setComponentEffect(&dialShadow);
+    wetSliderAttach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, wetSliderId, wetSlider);
+
     
     addAndMakeVisible(&cutoffLabel);
     cutoffLabel.setText("Cutoff", juce::dontSendNotification);
@@ -249,8 +266,8 @@ void ReverbAudioProcessorEditor::resized()
     flexboxColumnOne.alignContent = juce::FlexBox::AlignContent::center;
 
     juce::Array<juce::FlexItem> itemArrayColumnOne;
-    itemArrayColumnOne.add(juce::FlexItem(bounds.getWidth() / 12, bounds.getHeight() / 9, filterEngageButton).withMargin(juce::FlexItem::Margin(bounds.getHeight() * .32, 0, 0, bounds.getWidth() * .05)));
-    itemArrayColumnOne.add(juce::FlexItem(bounds.getWidth() / 12, bounds.getHeight() / 9, filterModeButton).withMargin(juce::FlexItem::Margin(bounds.getHeight() * .15, 0, 0, bounds.getWidth() * .05)));
+    itemArrayColumnOne.add(juce::FlexItem(bounds.getWidth() / 11, bounds.getHeight() / 6, filterEngageButton).withMargin(juce::FlexItem::Margin(bounds.getHeight() * .32, 0, 0, bounds.getWidth() * .05)));
+    itemArrayColumnOne.add(juce::FlexItem(bounds.getWidth() / 11, bounds.getHeight() / 6, filterModeButton).withMargin(juce::FlexItem::Margin(bounds.getHeight() * .15, 0, 0, bounds.getWidth() * .05)));
 
 
     flexboxColumnOne.items = itemArrayColumnOne;
@@ -308,7 +325,7 @@ void ReverbAudioProcessorEditor::resized()
     flexboxColumnFive.alignContent = juce::FlexBox::AlignContent::center;
 
     juce::Array<juce::FlexItem> itemArrayColumnFive;
-    itemArrayColumnFive.add(juce::FlexItem(bounds.getWidth() / 4, bounds.getHeight() / 1.25, drySlider).withMargin(juce::FlexItem::Margin(bounds.getHeight() * .12, 0, 0, bounds.getWidth() * .01)));
+    itemArrayColumnFive.add(juce::FlexItem(bounds.getWidth() / 3, bounds.getHeight() / 1.25, drySlider).withMargin(juce::FlexItem::Margin(bounds.getHeight() * .12, 0, 0, bounds.getWidth() * .01)));
 
 
     flexboxColumnFive.items = itemArrayColumnFive;
@@ -322,10 +339,10 @@ void ReverbAudioProcessorEditor::resized()
     flexboxColumnSix.alignContent = juce::FlexBox::AlignContent::center;
 
     juce::Array<juce::FlexItem> itemArrayColumnSix;
-    itemArrayColumnSix.add(juce::FlexItem(bounds.getWidth() / 4, bounds.getHeight() / 1.25, wetSlider).withMargin(juce::FlexItem::Margin(bounds.getHeight() * .12, 0, 0, bounds.getWidth() * .01)));
+    itemArrayColumnSix.add(juce::FlexItem(bounds.getWidth() / 3, bounds.getHeight() / 1.25, wetSlider).withMargin(juce::FlexItem::Margin(bounds.getHeight() * .12, 0, 0, bounds.getWidth() * .025)));
 
 
     flexboxColumnSix.items = itemArrayColumnSix;
-    flexboxColumnSix.performLayout(bounds.removeFromLeft(bounds.getWidth() / 2));
+    flexboxColumnSix.performLayout(bounds.removeFromLeft(bounds.getWidth()));
     /* ============================================================================*/
 }

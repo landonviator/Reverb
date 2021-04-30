@@ -11,7 +11,6 @@
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
 #include "ViatorDial.h"
-#include "ViatorSlider.h"
 
 //==============================================================================
 /**
@@ -37,7 +36,6 @@ private:
     juce::Label cutoffLabel, resonanceLabel, driveLabel, roomLabel, dampingLabel, widthLabel, dryLabel, wetLabel;
         
     ViatorDial customDial;
-    ViatorSlider customSlider;
     
     juce::DropShadow shadowProperties;
     juce::DropShadowEffect dialShadow;

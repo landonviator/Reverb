@@ -85,9 +85,15 @@ public:
     
     juce::AudioProcessorValueTreeState treeState;
     juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
+    
+    //bool filterEngageState;
 
 private:
     void parameterChanged (const juce::String& parameterID, float newValue) override;
+    juce::dsp::LadderFilter<float> ladderProcessor;
+    juce::dsp::Reverb reverbProcessor;
+    juce::dsp::Reverb::Parameters reverbParams;
+
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ReverbAudioProcessor)
 };
