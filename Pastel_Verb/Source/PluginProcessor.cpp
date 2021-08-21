@@ -159,34 +159,29 @@ juce::AudioProcessorValueTreeState::ParameterLayout Pastel_VerbAudioProcessor::c
 void Pastel_VerbAudioProcessor::parameterChanged(const juce::String &parameterID, float newValue){
     if (parameterID == cutoffSliderId)
     {
-        //ladderProcessor.setCutoffFrequencyHz(newValue);
-        DBG("Cutoff " << newValue);
+        ladderProcessor.setCutoffFrequencyHz(newValue);
     }
     
     else if (parameterID == resonanceSliderId)
     {
-        //ladderProcessor.setResonance(newValue * 0.01);
-        DBG("Resonance " << newValue);
+        ladderProcessor.setResonance(newValue * 0.01);
     }
     
     else if (parameterID == driveSliderId)
     {
-        //ladderProcessor.setDrive(pow(10, newValue / 20));
-        DBG("Drive " << newValue);
+        ladderProcessor.setDrive(pow(10, newValue / 20));
     }
     
     else if (parameterID == filterEngageId)
     {
         if (newValue == 0)
         {
-            //ladderProcessor.setEnabled(false);
-            DBG("Filter off");
+            ladderProcessor.setEnabled(false);
         }
         
         else
         {
-            //ladderProcessor.setEnabled(true);
-            DBG("Filter on");
+            ladderProcessor.setEnabled(true);
         }
     }
     
@@ -194,58 +189,87 @@ void Pastel_VerbAudioProcessor::parameterChanged(const juce::String &parameterID
     {
         if (newValue == 0)
         {
-            //ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF12);
-            DBG("Filter mode " << newValue);
+            ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF12);
         }
         
         else
         {
-            //ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF24);
-            DBG("Filter mode " << newValue);
+            ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF24);
         }
     }
     
     else if (parameterID == wetSliderId)
     {
-        //reverbParams.wetLevel = newValue * 0.01;
-        //reverbProcessor.setParameters(reverbParams);
-        DBG("Wet " << newValue);
+        reverbParams.wetLevel = newValue * 0.01;
+        reverbProcessor.setParameters(reverbParams);
     }
     
     else if (parameterID == drySliderId)
     {
-        //reverbParams.dryLevel = newValue * 0.01;
-        //reverbProcessor.setParameters(reverbParams);
-        DBG("Dry " << newValue);
+        reverbParams.dryLevel = newValue * 0.01;
+        reverbProcessor.setParameters(reverbParams);
     }
     
     else if (parameterID == roomSizeSliderId)
     {
-        //reverbParams.roomSize = newValue * 0.01;
-        //reverbProcessor.setParameters(reverbParams);
-        DBG("Room " << newValue);
+        reverbParams.roomSize = newValue * 0.01;
+        reverbProcessor.setParameters(reverbParams);
     }
     
     else if (parameterID == dampingSliderId)
     {
-        //reverbParams.damping = newValue * 0.01;
-        //reverbProcessor.setParameters(reverbParams);
-        DBG("Damping " << newValue);
+        reverbParams.damping = newValue * 0.01;
+        reverbProcessor.setParameters(reverbParams);
     }
     
     else
     {
-        //reverbParams.width = newValue * 0.01;
-        //reverbProcessor.setParameters(reverbParams);
-        DBG("Width " << newValue);
+        reverbParams.width = newValue * 0.01;
+        reverbProcessor.setParameters(reverbParams);
     }
 }
 
 //==============================================================================
 void Pastel_VerbAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    juce::dsp::ProcessSpec spec;
+    spec.maximumBlockSize = samplesPerBlock;
+    spec.sampleRate = sampleRate;
+    spec.numChannels = getTotalNumOutputChannels();
+    
+    ladderProcessor.prepare(spec);
+    ladderProcessor.reset();
+    ladderProcessor.setCutoffFrequencyHz(*treeState.getRawParameterValue(cutoffSliderId));
+    ladderProcessor.setResonance(*treeState.getRawParameterValue(resonanceSliderId) * 0.01);
+    ladderProcessor.setDrive(pow(10, *treeState.getRawParameterValue(driveSliderId) / 20));
+    
+    if (*treeState.getRawParameterValue(filterEngageId) == 0)
+    {
+        ladderProcessor.setEnabled(false);
+    }
+    
+    else
+    {
+        ladderProcessor.setEnabled(true);
+    }
+    
+    if (*treeState.getRawParameterValue(filterModeId) == 0)
+    {
+        ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF12);
+    }
+    else
+    {
+        ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF24);
+    }
+    
+    reverbProcessor.prepare(spec);
+    reverbProcessor.reset();
+    reverbParams.roomSize = *treeState.getRawParameterValue(roomSizeSliderId) * .01;
+    reverbParams.damping = *treeState.getRawParameterValue(dampingSliderId) * .01;
+    reverbParams.width = *treeState.getRawParameterValue(widthSliderId) * .01;
+    reverbParams.dryLevel = *treeState.getRawParameterValue(drySliderId) * .01;
+    reverbParams.wetLevel = *treeState.getRawParameterValue(wetSliderId) * .01;
+    reverbProcessor.setParameters(reverbParams);
 }
 
 void Pastel_VerbAudioProcessor::releaseResources()
@@ -286,27 +310,13 @@ void Pastel_VerbAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
-    // In case we have more outputs than inputs, this code clears any output
-    // channels that didn't contain input data, (because these aren't
-    // guaranteed to be empty - they may contain garbage).
-    // This is here to avoid people getting screaming feedback
-    // when they first compile a plugin, but obviously you don't need to keep
-    // this code if your algorithm always overwrites all the output channels.
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
-    // This is the place where you'd normally do the guts of your plugin's
-    // audio processing...
-    // Make sure to reset the state if your inner loop is processing
-    // the samples and the outer loop is handling the channels.
-    // Alternatively, you can process the samples with the channels
-    // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer (channel);
+    juce::dsp::AudioBlock<float> audioBlock {buffer};
 
-        // ..do something to the data...
-    }
+    ladderProcessor.process(juce::dsp::ProcessContextReplacing<float>(audioBlock));
+    reverbProcessor.process(juce::dsp::ProcessContextReplacing<float>(audioBlock));
 }
 
 //==============================================================================
@@ -323,26 +333,32 @@ juce::AudioProcessorEditor* Pastel_VerbAudioProcessor::createEditor()
 //==============================================================================
 void Pastel_VerbAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
+    // Get the value trees and write to a data stream to save
     treeState.state.appendChild(variableTree, nullptr);
-
     juce::MemoryOutputStream stream(destData, false);
-    
     treeState.state.writeToStream (stream);
 }
 
 void Pastel_VerbAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
+    // Recall the Value trees holding the saved params
     juce::ValueTree tree = juce::ValueTree::readFromData (data, size_t (sizeInBytes));
-        
     variableTree = tree.getChildWithName("ReverbVariables");
-
     if (tree.isValid())
     {
         treeState.state = tree;
     }
+    else
+    {
+        // A dialog box to inform the user that there's an error with the value tree
+        alertWindow.showNativeDialogBox(
+                                        "BRUH",
+                                        "Hello, it's Landon from Viator DSP. It seems you have run into an error I thought was impossible. See, you're getting this message because the value tree that holds your saved parameters has become invalid for some reason. Contact me at LandonViator@gmail.com to inform me of this error.",
+                                        true);
+    }
     
-    windowWidth = variableTree.getProperty("width");
-    windowHeight = variableTree.getProperty("height");
+    // Set all the saved parameters
+    setStateForTreeParameters();
 }
 
 //==============================================================================

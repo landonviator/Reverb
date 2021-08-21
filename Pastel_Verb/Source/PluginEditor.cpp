@@ -18,9 +18,9 @@ Pastel_VerbAudioProcessorEditor::Pastel_VerbAudioProcessorEditor (Pastel_VerbAud
     
     // Initialize UI components
     initShadows();
+    initButtons();
     setSliderProps();
     initSliders();
-    initButtons();
     initLabels();
     initFilterBorder();
     

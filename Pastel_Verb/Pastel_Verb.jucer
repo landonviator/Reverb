@@ -9,6 +9,8 @@
               cppLanguageStandard="17">
   <MAINGROUP id="ryeNUG" name="Pastel_Verb">
     <GROUP id="{B6304C21-03E4-31C8-860D-220E8BBF996D}" name="ParametersDef">
+      <FILE id="E8e4js" name="SetTreeState.cpp" compile="1" resource="0"
+            file="Source/SetTreeState.cpp"/>
       <FILE id="xTxuTl" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>
     </GROUP>
     <GROUP id="{A6284375-E6C2-9184-1B35-39B7ED83F731}" name="UI">

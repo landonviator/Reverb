@@ -70,6 +70,16 @@ private:
     juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
     void parameterChanged (const juce::String& parameterID, float newValue) override;
     
+    /**DSP*/
+    juce::dsp::LadderFilter<float> ladderProcessor;
+    juce::dsp::Reverb reverbProcessor;
+    juce::dsp::Reverb::Parameters reverbParams;
+    
+    /**Dialog box*/
+    juce::AlertWindow alertWindow {"Alert Window", "Test", juce::AlertWindow::AlertIconType::WarningIcon};
+    
+    /**Recall saved parameters*/
+    void setStateForTreeParameters();
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Pastel_VerbAudioProcessor)
 };
