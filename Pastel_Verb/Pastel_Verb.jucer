@@ -4,10 +4,13 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" version="2.0.0"
               companyName="Viator DSP" companyCopyright="Landon Viator 2021"
               companyWebsite="https://www.patreon.com/ViatorDSP" companyEmail="landonviator@gmail.com"
-              pluginFormats="buildAU,buildStandalone,buildVST,buildVST3" pluginName="Pastel Verb"
+              pluginFormats="buildAU,buildStandalone,buildVST3" pluginName="Pastel Verb"
               pluginDesc="Serene reverb capable of dark and smooth ambience."
               cppLanguageStandard="17">
   <MAINGROUP id="ryeNUG" name="Pastel_Verb">
+    <GROUP id="{B6304C21-03E4-31C8-860D-220E8BBF996D}" name="ParametersDef">
+      <FILE id="xTxuTl" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>
+    </GROUP>
     <GROUP id="{A6284375-E6C2-9184-1B35-39B7ED83F731}" name="UI">
       <GROUP id="{5EC19EFF-B4C6-B919-84B4-51BE12D56A06}" name="Styles">
         <FILE id="WqFBEN" name="StyleSheet.cpp" compile="1" resource="0" file="Source/StyleSheet.cpp"/>

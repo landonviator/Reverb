@@ -35,6 +35,9 @@ private:
     /**Logo image*/
     juce::Image headerLogo;
     
+    /**Bug with the resized function finishing before the constructor, this bool helps fix it*/
+    bool constructorFinished = false;
+    
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     Pastel_VerbAudioProcessor& audioProcessor;

@@ -38,4 +38,6 @@ void Pastel_VerbAudioProcessorEditor::setUpWindow(Pastel_VerbAudioProcessor &aud
     {
         setSize (width, height);
     }
+    
+    constructorFinished = true;
 }

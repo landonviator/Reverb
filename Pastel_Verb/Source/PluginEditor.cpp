@@ -36,16 +36,33 @@ void Pastel_VerbAudioProcessorEditor::paint (juce::Graphics& g)
     g.drawImageWithin(headerLogo, AudioProcessorEditor::getWidth() * 0.38, AudioProcessorEditor::getHeight() * 0.8 + 4, AudioProcessorEditor::getWidth() * 0.25, AudioProcessorEditor::getHeight() * 0.1, juce::RectanglePlacement::centred);
     
     // Footer text
-    g.setFont (AudioProcessorEditor::getWidth() * 0.015);
+    // Make sure the text is never too small, which would cause UX issues
+    if (AudioProcessorEditor::getWidth() * 0.015 > 9.0)
+    {
+        g.setFont (AudioProcessorEditor::getWidth() * 0.015);
+    }
+    
+    else
+    {
+        g.setFont (9.0);
+    }
     g.setColour (juce::Colours::whitesmoke.withAlpha(0.25f));
     g.drawFittedText ("Pastel Verb v2.0.0", AudioProcessorEditor::getWidth() * 0.12, AudioProcessorEditor::getHeight() * 0.18, AudioProcessorEditor::getWidth(), AudioProcessorEditor::getHeight(), juce::Justification::topLeft, 1);
-            
-        
-              
 }
 
 void Pastel_VerbAudioProcessorEditor::resized()
 {
-    // This is generally where you'll want to lay out the positions of any
-    // subcomponents in your editor..
+    // Save plugin size in value tree
+    audioProcessor.variableTree.setProperty("width", getWidth(), nullptr);
+    audioProcessor.variableTree.setProperty("height", getHeight(), nullptr);
+    
+    // Save the current size of the window to recall opening the plugin after minimizing it
+    // There was a bug where resized() started in the middle of the constructor
+    // This was causing it to always open very small
+    // This if check fixes it
+    if (constructorFinished)
+    {
+        audioProcessor.windowWidth = AudioProcessorEditor::getWidth();
+        audioProcessor.windowHeight = AudioProcessorEditor::getHeight();
+    }
 }

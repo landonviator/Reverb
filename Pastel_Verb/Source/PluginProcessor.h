@@ -9,11 +9,14 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "Parameters.h"
 
 //==============================================================================
 /**
 */
-class Pastel_VerbAudioProcessor  : public juce::AudioProcessor
+class Pastel_VerbAudioProcessor  :
+public juce::AudioProcessor,
+public juce::AudioProcessorValueTreeState::Listener
 {
 public:
     //==============================================================================
@@ -53,11 +56,20 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
     
+    /**Create parameter trees*/
+    juce::AudioProcessorValueTreeState treeState;
+    juce::ValueTree variableTree;
+    
     /**Helpful variables to store the current window size*/
     float windowWidth {0.0};
     float windowHeight {0.0};
 
 private:
+    
+    /**Important parameter methods*/
+    juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
+    void parameterChanged (const juce::String& parameterID, float newValue) override;
+    
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Pastel_VerbAudioProcessor)
 };

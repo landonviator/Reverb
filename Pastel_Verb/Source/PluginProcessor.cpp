@@ -19,13 +19,49 @@ Pastel_VerbAudioProcessor::Pastel_VerbAudioProcessor()
                       #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
-                       )
+                       ),
+treeState (*this, nullptr, "PARAMETER", createParameterLayout())
 #endif
 {
+    treeState.addParameterListener (filterEngageId, this);
+    treeState.addParameterListener (filterModeId, this);
+    treeState.addParameterListener (cutoffSliderId, this);
+    treeState.addParameterListener (resonanceSliderId, this);
+    treeState.addParameterListener (driveSliderId, this);
+    treeState.addParameterListener (roomSizeSliderId, this);
+    treeState.addParameterListener (dampingSliderId, this);
+    treeState.addParameterListener (widthSliderId, this);
+    treeState.addParameterListener (drySliderId, this);
+    treeState.addParameterListener (wetSliderId, this);
+    
+    variableTree = {
+                    
+                    "ReverbVariables", {},
+                    {
+                      { "Group", {{ "name", "ReverbVars" }},
+                        {
+                          { "Parameter", {{ "id", "width" }, { "value", 0.0 }}},
+                            { "Parameter", {{ "id", "height" }, { "value", 0.0 }}},
+                        }
+                      }
+                    }
+                  };
+    
+    
 }
 
 Pastel_VerbAudioProcessor::~Pastel_VerbAudioProcessor()
 {
+    treeState.removeParameterListener (filterEngageId, this);
+    treeState.removeParameterListener (filterModeId, this);
+    treeState.removeParameterListener (cutoffSliderId, this);
+    treeState.removeParameterListener (resonanceSliderId, this);
+    treeState.removeParameterListener (driveSliderId, this);
+    treeState.removeParameterListener (roomSizeSliderId, this);
+    treeState.removeParameterListener (dampingSliderId, this);
+    treeState.removeParameterListener (widthSliderId, this);
+    treeState.removeParameterListener (drySliderId, this);
+    treeState.removeParameterListener (wetSliderId, this);
 }
 
 //==============================================================================
@@ -88,6 +124,109 @@ const juce::String Pastel_VerbAudioProcessor::getProgramName (int index)
 
 void Pastel_VerbAudioProcessor::changeProgramName (int index, const juce::String& newName)
 {
+}
+
+juce::AudioProcessorValueTreeState::ParameterLayout Pastel_VerbAudioProcessor::createParameterLayout()
+{
+    std::vector <std::unique_ptr<juce::RangedAudioParameter>> params;
+    params.reserve(10);
+    
+    auto filterEngageParam = std::make_unique<juce::AudioParameterInt>(filterEngageId, filterEngageName, 0, 1, 1);
+    auto filterModeParam = std::make_unique<juce::AudioParameterInt>(filterModeId, filterModeName, 0, 1, 0);
+    auto cutoffParam = std::make_unique<juce::AudioParameterInt>(cutoffSliderId, cutoffSliderName, 20, 20000, 1200);
+    auto resonanceParam = std::make_unique<juce::AudioParameterInt>(resonanceSliderId, resonanceSliderName, 0, 100, 0);
+    auto driveParam = std::make_unique<juce::AudioParameterFloat>(driveSliderId, driveSliderName, 0.0f, 24.0f, 0.0f);
+    auto roomSizeParam = std::make_unique<juce::AudioParameterInt>(roomSizeSliderId, roomSizeSliderName, 0, 100, 50);
+    auto dampingParam = std::make_unique<juce::AudioParameterInt>(dampingSliderId, dampingSliderName, 0, 100, 50);
+    auto widthParam = std::make_unique<juce::AudioParameterInt>(widthSliderId, widthSliderName, 0, 100, 100);
+    auto dryParam = std::make_unique<juce::AudioParameterInt>(drySliderId, drySliderName, 0, 100, 0);
+    auto wetParam = std::make_unique<juce::AudioParameterInt>(wetSliderId, wetSliderName, 0, 100, 50);
+    
+    params.push_back(std::move(filterEngageParam));
+    params.push_back(std::move(filterModeParam));
+    params.push_back(std::move(cutoffParam));
+    params.push_back(std::move(resonanceParam));
+    params.push_back(std::move(driveParam));
+    params.push_back(std::move(roomSizeParam));
+    params.push_back(std::move(dampingParam));
+    params.push_back(std::move(widthParam));
+    params.push_back(std::move(dryParam));
+    params.push_back(std::move(wetParam));
+    
+    return { params.begin(), params.end() };
+}
+
+void Pastel_VerbAudioProcessor::parameterChanged(const juce::String &parameterID, float newValue){
+    if (parameterID == cutoffSliderId)
+    {
+        //ladderProcessor.setCutoffFrequencyHz(newValue);
+    }
+    
+    else if (parameterID == resonanceSliderId)
+    {
+        //ladderProcessor.setResonance(newValue * 0.01);
+    }
+    
+    else if (parameterID == driveSliderId)
+    {
+        //ladderProcessor.setDrive(pow(10, newValue / 20));
+    }
+    
+    else if (parameterID == filterEngageId)
+    {
+        if (newValue == 0)
+        {
+            //ladderProcessor.setEnabled(false);
+        }
+        
+        else
+        {
+            //ladderProcessor.setEnabled(true);
+        }
+    }
+    
+    else if (parameterID == filterModeId)
+    {
+        if (newValue == 0)
+        {
+            //ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF12);
+        }
+        
+        else
+        {
+            //ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF24);
+        }
+    }
+    
+    else if (parameterID == wetSliderId)
+    {
+        //reverbParams.wetLevel = newValue * 0.01;
+        //reverbProcessor.setParameters(reverbParams);
+    }
+    
+    else if (parameterID == drySliderId)
+    {
+        //reverbParams.dryLevel = newValue * 0.01;
+        //reverbProcessor.setParameters(reverbParams);
+    }
+    
+    else if (parameterID == roomSizeSliderId)
+    {
+        //reverbParams.roomSize = newValue * 0.01;
+        //reverbProcessor.setParameters(reverbParams);
+    }
+    
+    else if (parameterID == dampingSliderId)
+    {
+        //reverbParams.damping = newValue * 0.01;
+        //reverbProcessor.setParameters(reverbParams);
+    }
+    
+    else
+    {
+        //reverbParams.width = newValue * 0.01;
+        //reverbProcessor.setParameters(reverbParams);
+    }
 }
 
 //==============================================================================
@@ -172,15 +311,26 @@ juce::AudioProcessorEditor* Pastel_VerbAudioProcessor::createEditor()
 //==============================================================================
 void Pastel_VerbAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
-    // You should use this method to store your parameters in the memory block.
-    // You could do that either as raw data, or use the XML or ValueTree classes
-    // as intermediaries to make it easy to save and load complex data.
+    treeState.state.appendChild(variableTree, nullptr);
+
+    juce::MemoryOutputStream stream(destData, false);
+    
+    treeState.state.writeToStream (stream);
 }
 
 void Pastel_VerbAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    // You should use this method to restore your parameters from this memory block,
-    // whose contents will have been created by the getStateInformation() call.
+    juce::ValueTree tree = juce::ValueTree::readFromData (data, size_t (sizeInBytes));
+        
+    variableTree = tree.getChildWithName("ReverbVariables");
+
+    if (tree.isValid())
+    {
+        treeState.state = tree;
+    }
+    
+    windowWidth = variableTree.getProperty("width");
+    windowHeight = variableTree.getProperty("height");
 }
 
 //==============================================================================
