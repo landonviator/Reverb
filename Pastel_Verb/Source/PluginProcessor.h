@@ -52,6 +52,10 @@ public:
     //==============================================================================
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
+    
+    /**Helpful variables to store the current window size*/
+    float windowWidth {0.0};
+    float windowHeight {0.0};
 
 private:
     //==============================================================================
