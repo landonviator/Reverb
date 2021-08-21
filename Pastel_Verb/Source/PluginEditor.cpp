@@ -14,6 +14,8 @@ Pastel_VerbAudioProcessorEditor::Pastel_VerbAudioProcessorEditor (Pastel_VerbAud
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
     setUpWindow(audioProcessor);
+    
+    initSliders();
 }
 
 Pastel_VerbAudioProcessorEditor::~Pastel_VerbAudioProcessorEditor()
@@ -52,17 +54,8 @@ void Pastel_VerbAudioProcessorEditor::paint (juce::Graphics& g)
 
 void Pastel_VerbAudioProcessorEditor::resized()
 {
-    // Save plugin size in value tree
-    audioProcessor.variableTree.setProperty("width", getWidth(), nullptr);
-    audioProcessor.variableTree.setProperty("height", getHeight(), nullptr);
+    drySlider.setBounds(100, 100, 128, 512);
     
-    // Save the current size of the window to recall opening the plugin after minimizing it
-    // There was a bug where resized() started in the middle of the constructor
-    // This was causing it to always open very small
-    // This if check fixes it
-    if (constructorFinished)
-    {
-        audioProcessor.windowWidth = AudioProcessorEditor::getWidth();
-        audioProcessor.windowHeight = AudioProcessorEditor::getHeight();
-    }
+    // Save the window size last before resized() finishes to recall it properly at construction
+    saveWindowSize();
 }
