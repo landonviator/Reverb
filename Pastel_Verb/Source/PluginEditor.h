@@ -25,6 +25,8 @@ public:
     void resized() override;
 
 private:
+    
+    void setUpWindow(Pastel_VerbAudioProcessor& audioProcessor);
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     Pastel_VerbAudioProcessor& audioProcessor;

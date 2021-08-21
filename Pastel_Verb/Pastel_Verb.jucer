@@ -9,9 +9,13 @@
               cppLanguageStandard="17">
   <MAINGROUP id="ryeNUG" name="Pastel_Verb">
     <GROUP id="{A6284375-E6C2-9184-1B35-39B7ED83F731}" name="UI">
-      <FILE id="WqFBEN" name="StyleSheet.cpp" compile="1" resource="0" file="Source/StyleSheet.cpp"/>
-      <FILE id="wjBRQx" name="StyleSheet.h" compile="0" resource="0" file="Source/StyleSheet.h"/>
-      <FILE id="WU5wFy" name="ViatorDial.h" compile="0" resource="0" file="Source/ViatorDial.h"/>
+      <GROUP id="{5EC19EFF-B4C6-B919-84B4-51BE12D56A06}" name="Styles">
+        <FILE id="WqFBEN" name="StyleSheet.cpp" compile="1" resource="0" file="Source/StyleSheet.cpp"/>
+        <FILE id="wjBRQx" name="StyleSheet.h" compile="0" resource="0" file="Source/StyleSheet.h"/>
+        <FILE id="WU5wFy" name="ViatorDial.h" compile="0" resource="0" file="Source/ViatorDial.h"/>
+      </GROUP>
+      <FILE id="YeCWtP" name="CreateWindow.cpp" compile="1" resource="0"
+            file="Source/CreateWindow.cpp"/>
     </GROUP>
     <GROUP id="{631B3801-95F7-9418-7D96-7F5DD997E472}" name="Assets">
       <FILE id="UAOcw0" name="landon55-03.png" compile="0" resource="1" file="Source/Assets/landon55-03.png"/>

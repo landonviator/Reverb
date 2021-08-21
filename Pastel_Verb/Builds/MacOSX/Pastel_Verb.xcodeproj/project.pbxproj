@@ -29,6 +29,7 @@
 		0C269AB0ACAF690287A792A3 /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXBuildFile; fileRef = 94D05906D443C90386616460; };
 		0C2B8873C518AA621ED89A0F /* include_juce_audio_plugin_client_AU_1.mm */ = {isa = PBXBuildFile; fileRef = A09A93C25C369B99B3ED3DEF; };
 		0D67EA1FA3B29E83DF1DDADF /* BinaryData2.cpp */ = {isa = PBXBuildFile; fileRef = F5C29C4F25D0CF06EC92448C; };
+		10D142F9C8D55AE82495A140 /* CreateWindow.cpp */ = {isa = PBXBuildFile; fileRef = BC0A36541E953F268FE4AD23; };
 		11899C1E6DF188A4EFBB57A6 /* include_juce_events.mm */ = {isa = PBXBuildFile; fileRef = B22D6CAF9DFD8CF3BF16B4B0; };
 		189F49030A2051F7D878B7A8 /* CoreAudio.framework */ = {isa = PBXBuildFile; fileRef = BB1ADA96BA6F39EB1745C5C6; };
 		1FFDE9D5B7B70A0FAF14CE20 /* AudioUnit.framework */ = {isa = PBXBuildFile; fileRef = CF0889CBFF24024A33C5F1DA; };
@@ -127,6 +128,7 @@
 		B7305604435505A5A01E3BCF /* include_juce_audio_basics.mm */ /* include_juce_audio_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_basics.mm; path = ../../JuceLibraryCode/include_juce_audio_basics.mm; sourceTree = SOURCE_ROOT; };
 		B790B38C581374424E65C803 /* CoreMIDI.framework */ /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		BB1ADA96BA6F39EB1745C5C6 /* CoreAudio.framework */ /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		BC0A36541E953F268FE4AD23 /* CreateWindow.cpp */ /* CreateWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CreateWindow.cpp; path = ../../Source/CreateWindow.cpp; sourceTree = SOURCE_ROOT; };
 		BC9C8E30C894A1713E9FF419 /* landon55-03.png */ /* landon55-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "landon55-03.png"; path = "../../Source/Assets/landon55-03.png"; sourceTree = SOURCE_ROOT; };
 		BD37C0E1EB80CAECDCBF1242 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = /Users/land00m/Documents/GitHub/JUCE/modules/juce_graphics; sourceTree = "<absolute>"; };
 		BF512955D26F4AF349027E50 /* IOKit.framework */ /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
@@ -230,9 +232,8 @@
 		0C7327D2C33D08A5C0F11A93 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E5BDF02DE45E916C99EDB85B,
-				B6F88801BABBD924DDC90E4F,
-				651DAB1304F4174D18C68648,
+				2343098F449458F16BB3E69B,
+				BC0A36541E953F268FE4AD23,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -287,6 +288,16 @@
 				07D4B05CF8D15A6CA87CC02C,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2343098F449458F16BB3E69B /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				E5BDF02DE45E916C99EDB85B,
+				B6F88801BABBD924DDC90E4F,
+				651DAB1304F4174D18C68648,
+			);
+			name = Styles;
 			sourceTree = "<group>";
 		};
 		26BB6E304826AB1BA9935454 /* Source */ = {
@@ -685,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D027A9168CFAD3475FD84ED,
+				10D142F9C8D55AE82495A140,
 				56CF51D76259E80FE7D72606,
 				4762B655197F582B3A4D5BCB,
 				74800EF53E773A9E55E32F08,
