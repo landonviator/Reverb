@@ -25,7 +25,22 @@ void Pastel_VerbAudioProcessorEditor::paint (juce::Graphics& g)
 {
     //Image layer from Illustrator
     pluginBackground = juce::ImageCache::getFromMemory(BinaryData::pluginBackground2_png, BinaryData::pluginBackground2_pngSize);
+    
+    // Draw and position the image
     g.drawImageWithin(pluginBackground, 0, 0, AudioProcessorEditor::getWidth(), AudioProcessorEditor::getHeight(), juce::RectanglePlacement::stretchToFit);
+    
+    // Logo layer
+    headerLogo = juce::ImageCache::getFromMemory(BinaryData::landon5504_png, BinaryData::landon5504_pngSize);
+    
+    // Draw and position the image
+    g.drawImageWithin(headerLogo, AudioProcessorEditor::getWidth() * 0.38, AudioProcessorEditor::getHeight() * 0.8 + 4, AudioProcessorEditor::getWidth() * 0.25, AudioProcessorEditor::getHeight() * 0.1, juce::RectanglePlacement::centred);
+    
+    // Footer text
+    g.setFont (AudioProcessorEditor::getWidth() * 0.015);
+    g.setColour (juce::Colours::whitesmoke.withAlpha(0.25f));
+    g.drawFittedText ("Pastel Verb v2.0.0", AudioProcessorEditor::getWidth() * 0.12, AudioProcessorEditor::getHeight() * 0.18, AudioProcessorEditor::getWidth(), AudioProcessorEditor::getHeight(), juce::Justification::topLeft, 1);
+            
+        
               
 }
 

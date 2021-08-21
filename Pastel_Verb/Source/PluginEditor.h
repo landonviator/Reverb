@@ -32,6 +32,9 @@ private:
     /**Image background*/
     juce::Image pluginBackground;
     
+    /**Logo image*/
+    juce::Image headerLogo;
+    
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     Pastel_VerbAudioProcessor& audioProcessor;
