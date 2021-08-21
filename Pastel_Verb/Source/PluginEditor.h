@@ -26,7 +26,12 @@ public:
 
 private:
     
+    /**Set up the UI window size*/
     void setUpWindow(Pastel_VerbAudioProcessor& audioProcessor);
+    
+    /**Image background*/
+    juce::Image pluginBackground;
+    
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     Pastel_VerbAudioProcessor& audioProcessor;

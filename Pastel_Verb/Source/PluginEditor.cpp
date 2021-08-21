@@ -23,12 +23,10 @@ Pastel_VerbAudioProcessorEditor::~Pastel_VerbAudioProcessorEditor()
 //==============================================================================
 void Pastel_VerbAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
-
-    g.setColour (juce::Colours::white);
-    g.setFont (15.0f);
-    g.drawFittedText ("Pastel Verb", getLocalBounds(), juce::Justification::centred, 1);
+    //Image layer from Illustrator
+    pluginBackground = juce::ImageCache::getFromMemory(BinaryData::pluginBackground2_png, BinaryData::pluginBackground2_pngSize);
+    g.drawImageWithin(pluginBackground, 0, 0, AudioProcessorEditor::getWidth(), AudioProcessorEditor::getHeight(), juce::RectanglePlacement::stretchToFit);
+              
 }
 
 void Pastel_VerbAudioProcessorEditor::resized()
