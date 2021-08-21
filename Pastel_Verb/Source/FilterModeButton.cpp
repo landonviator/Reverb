@@ -16,18 +16,17 @@ void Pastel_VerbAudioProcessorEditor::setSetFilterModeButtonProps(juce::TextButt
     button.setColour(0x1000100, juce::Colours::lightgoldenrodyellow.darker(0.2f));
     button.setColour(0x1000102, juce::Colours::black.brighter(0.1));
     button.setButtonText("12 dB/Oct");
+    button.setEnabled(filterEngageButton.getToggleState());
         
-    //enabledToggleAttach = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(audioProcessor.treeState, eqToggleId, enabledToggle);
+    // Parameter attachment
+    filterModeButtonAttach = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(audioProcessor.treeState, filterModeId, filterModeButton);
 
     // Change the button text based on the state
-    const auto message = button.getToggleState() ? "12 dB/Oct" : "24 dB/Oct";
-
+    const auto message = button.getToggleState() ? "Smooth" : "Steep";
     button.setButtonText(message);
-
     button.onClick = [&]()
     {
-        const auto message = button.getToggleState() ? "12 dB/Oct" : "24 dB/Oct";
-
+        const auto message = button.getToggleState() ? "Smooth" : "Steep";
         button.setButtonText(message);
     };
 }

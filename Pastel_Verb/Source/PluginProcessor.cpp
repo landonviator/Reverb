@@ -160,16 +160,19 @@ void Pastel_VerbAudioProcessor::parameterChanged(const juce::String &parameterID
     if (parameterID == cutoffSliderId)
     {
         //ladderProcessor.setCutoffFrequencyHz(newValue);
+        DBG("Cutoff " << newValue);
     }
     
     else if (parameterID == resonanceSliderId)
     {
         //ladderProcessor.setResonance(newValue * 0.01);
+        DBG("Resonance " << newValue);
     }
     
     else if (parameterID == driveSliderId)
     {
         //ladderProcessor.setDrive(pow(10, newValue / 20));
+        DBG("Drive " << newValue);
     }
     
     else if (parameterID == filterEngageId)
@@ -177,11 +180,13 @@ void Pastel_VerbAudioProcessor::parameterChanged(const juce::String &parameterID
         if (newValue == 0)
         {
             //ladderProcessor.setEnabled(false);
+            DBG("Filter off");
         }
         
         else
         {
             //ladderProcessor.setEnabled(true);
+            DBG("Filter on");
         }
     }
     
@@ -190,11 +195,13 @@ void Pastel_VerbAudioProcessor::parameterChanged(const juce::String &parameterID
         if (newValue == 0)
         {
             //ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF12);
+            DBG("Filter mode " << newValue);
         }
         
         else
         {
             //ladderProcessor.setMode(juce::dsp::LadderFilterMode::LPF24);
+            DBG("Filter mode " << newValue);
         }
     }
     
@@ -202,30 +209,35 @@ void Pastel_VerbAudioProcessor::parameterChanged(const juce::String &parameterID
     {
         //reverbParams.wetLevel = newValue * 0.01;
         //reverbProcessor.setParameters(reverbParams);
+        DBG("Wet " << newValue);
     }
     
     else if (parameterID == drySliderId)
     {
         //reverbParams.dryLevel = newValue * 0.01;
         //reverbProcessor.setParameters(reverbParams);
+        DBG("Dry " << newValue);
     }
     
     else if (parameterID == roomSizeSliderId)
     {
         //reverbParams.roomSize = newValue * 0.01;
         //reverbProcessor.setParameters(reverbParams);
+        DBG("Room " << newValue);
     }
     
     else if (parameterID == dampingSliderId)
     {
         //reverbParams.damping = newValue * 0.01;
         //reverbProcessor.setParameters(reverbParams);
+        DBG("Damping " << newValue);
     }
     
     else
     {
         //reverbParams.width = newValue * 0.01;
         //reverbProcessor.setParameters(reverbParams);
+        DBG("Width " << newValue);
     }
 }
 

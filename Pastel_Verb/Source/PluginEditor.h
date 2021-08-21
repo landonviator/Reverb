@@ -15,12 +15,15 @@
 #include "LV_Label.h"
 #include "LV_Fader.h"
 #include "LV_Toggle.h"
+#include "LV_GroupComponent.h"
 
 
 //==============================================================================
 /**
 */
-class Pastel_VerbAudioProcessorEditor  : public juce::AudioProcessorEditor
+class Pastel_VerbAudioProcessorEditor  :
+public juce::AudioProcessorEditor,
+public juce::Slider::Listener
 {
 public:
     Pastel_VerbAudioProcessorEditor (Pastel_VerbAudioProcessor&);
@@ -29,7 +32,10 @@ public:
     //==============================================================================
     void paint (juce::Graphics&) override;
     void resized() override;
-
+    
+    /**Slider listener override*/
+    void sliderValueChanged(juce::Slider *slider) override;
+    
 private:
     
     /**Set up the UI window size*/
@@ -59,6 +65,9 @@ private:
     /**Initialize the sliders*/
     void initSliders();
     
+    /**Set individual slider props*/
+    void setSliderProps();
+    
     /**Container for all sliders*/
     std::vector<juce::Slider*> sliders =
     {
@@ -77,7 +86,6 @@ private:
     /**Individual button props*/
     void setSetFilterEngageButtonProps(juce::TextButton &button);
     void setSetFilterModeButtonProps(juce::TextButton &button);
-
     
     /**Labels*/
     juce::LV_Label cutoffLabel, resonanceLabel, driveLabel, roomLabel, dampingLabel, widthLabel, dryLabel, wetLabel;
@@ -97,6 +105,12 @@ private:
     {
         "Cutoff", "Resonance", "Drive", "Room Size", "Damping", "Width", "Dry", "Wet"
     };
+    
+    /**Component border*/
+    juce::LV_GroupComponent filterBorder;
+    
+    /**Initialize border*/
+    void initFilterBorder();
     
     /**Shadows*/
     /**Initialize shadows*/

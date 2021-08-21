@@ -14,6 +14,6 @@ void Pastel_VerbAudioProcessorEditor::initButtons()
 {
     addAndMakeVisible(filterModeButton);
     addAndMakeVisible(filterEngageButton);
-    setSetFilterModeButtonProps(filterModeButton);
     setSetFilterEngageButtonProps(filterEngageButton);
+    setSetFilterModeButtonProps(filterModeButton);
 }

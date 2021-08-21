@@ -34,7 +34,7 @@ ReverbAudioProcessorEditor::ReverbAudioProcessorEditor (ReverbAudioProcessor& p)
     addAndMakeVisible(&filterModeButton);
     filterModeButton.setClickingTogglesState(true);
     filterModeButton.setButtonText("12/24 dB");
-    filterModeButton.setColour(0x1000100, juce::Colour::fromFloatRGBA(0, 0, 0, .25));
+    filterModeButton.setColour(0x100011a, juce::Colour::fromFloatRGBA(0, 0, 0, .25));
     filterModeButton.setColour(0x1000c00, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
     filterModeButton.setColour(0x1000101, juce::Colour::fromFloatRGBA(0, 0, 0, .15));
     filterModeButton.setColour(0x1000102, juce::Colour::fromFloatRGBA(1, 1, 1, 0.25));

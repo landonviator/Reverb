@@ -12,6 +12,10 @@
       <FILE id="xTxuTl" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>
     </GROUP>
     <GROUP id="{A6284375-E6C2-9184-1B35-39B7ED83F731}" name="UI">
+      <GROUP id="{5B91E64D-FD81-E796-B9DE-FB78D9BDAC3B}" name="Borders">
+        <FILE id="wi27PH" name="FilterBorder.cpp" compile="1" resource="0"
+              file="Source/FilterBorder.cpp"/>
+      </GROUP>
       <GROUP id="{37042C37-3E59-AE38-B813-42B995DDBB35}" name="Shadow">
         <FILE id="GxaC8A" name="InitShadows.cpp" compile="1" resource="0" file="Source/InitShadows.cpp"/>
       </GROUP>
@@ -27,10 +31,13 @@
       </GROUP>
       <GROUP id="{EFFB48E1-CECA-BD54-D23B-2773AE9B6FA5}" name="Sliders">
         <FILE id="wKcmWr" name="InitSliders.cpp" compile="1" resource="0" file="Source/InitSliders.cpp"/>
+        <FILE id="heg9My" name="SliderProps.cpp" compile="1" resource="0" file="Source/SliderProps.cpp"/>
       </GROUP>
       <GROUP id="{5EC19EFF-B4C6-B919-84B4-51BE12D56A06}" name="Styles">
         <FILE id="JVbt1n" name="LV_Dial.h" compile="0" resource="0" file="Source/LV_Dial.h"/>
         <FILE id="yfLNc8" name="LV_Fader.h" compile="0" resource="0" file="Source/LV_Fader.h"/>
+        <FILE id="MT5IN6" name="LV_GroupComponent.h" compile="0" resource="0"
+              file="Source/LV_GroupComponent.h"/>
         <FILE id="BE3LOd" name="LV_Label.h" compile="0" resource="0" file="Source/LV_Label.h"/>
         <FILE id="gN8Owk" name="LV_Toggle.h" compile="0" resource="0" file="Source/LV_Toggle.h"/>
         <FILE id="WqFBEN" name="StyleSheet.cpp" compile="1" resource="0" file="Source/StyleSheet.cpp"/>

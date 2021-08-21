@@ -13,12 +13,22 @@
 Pastel_VerbAudioProcessorEditor::Pastel_VerbAudioProcessorEditor (Pastel_VerbAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
+    // Window size setup
     setUpWindow(audioProcessor);
     
+    // Initialize UI components
     initShadows();
+    setSliderProps();
     initSliders();
     initButtons();
     initLabels();
+    initFilterBorder();
+    
+    // Adjust the width so the text doesn't get cut off
+    // why here? because
+    filterModeButton.changeWidthToFitText();
+    filterEngageButton.setBounds(filterModeButton.getX(), filterModeButton.getY() + filterModeButton.getHeight() * 2, filterModeButton.getWidth(), AudioProcessorEditor::getWidth() / 14.0 / 2.0);
+
 }
 
 Pastel_VerbAudioProcessorEditor::~Pastel_VerbAudioProcessorEditor()
@@ -56,36 +66,55 @@ void Pastel_VerbAudioProcessorEditor::paint (juce::Graphics& g)
     {
         g.setFont (9.0);
     }
-    g.setColour (juce::Colours::whitesmoke.withAlpha(0.25f));
-    g.drawFittedText ("Pastel Verb v2.0.0", AudioProcessorEditor::getWidth() * 0.12, AudioProcessorEditor::getHeight() * 0.18, AudioProcessorEditor::getWidth(), AudioProcessorEditor::getHeight(), juce::Justification::topLeft, 1);
+    g.setColour (juce::Colours::whitesmoke.withAlpha(0.125f));
+    g.drawFittedText ("Pastel Verb v2.1.1", AudioProcessorEditor::getWidth() * 0.12, AudioProcessorEditor::getHeight() * 0.12, AudioProcessorEditor::getWidth(), AudioProcessorEditor::getHeight(), juce::Justification::topLeft, 1);
 }
 
 void Pastel_VerbAudioProcessorEditor::resized()
 {
     // Some helpful variables to map out the bounds
     auto topMargin {AudioProcessorEditor::getHeight() * 0.15};
-    auto height {AudioProcessorEditor::getHeight()};
     auto leftMargin {AudioProcessorEditor::getWidth() / 6.0};
     auto buttonWidth {AudioProcessorEditor::getWidth() / 14.0};
     auto dialSize {AudioProcessorEditor::getWidth() / 9};
-    auto spaceBetweenDials {1.1};
+    auto spaceBetweendials {1.5};
     auto sliderWidth {dialSize};
-    auto sliderHeight {dialSize * 2.32};
+    auto sliderHeight {dialSize * 2.48};
     
     // The button positions
     filterModeButton.setBounds(leftMargin, topMargin * 2, buttonWidth, buttonWidth / 2);
-    filterEngageButton.setBounds(filterModeButton.getX(), filterModeButton.getY() + filterModeButton.getHeight() * 2, buttonWidth, buttonWidth / 2);
+    filterEngageButton.setBounds(filterModeButton.getX(), filterModeButton.getY() + filterModeButton.getHeight() * 2, filterModeButton.getWidth(), buttonWidth / 2);
 
     // The dial positions
     cutoffSlider.setBounds(filterModeButton.getX() + filterModeButton.getWidth() * 2, filterModeButton.getY() - filterModeButton.getHeight() * 1.95, dialSize, dialSize);
-    roomSizeSlider.setBounds(cutoffSlider.getX(), cutoffSlider.getY() + cutoffSlider.getHeight() + filterModeButton.getHeight(), dialSize, dialSize);
+    roomSizeSlider.setBounds(cutoffSlider.getX(), cutoffSlider.getY() + cutoffSlider.getHeight() + filterModeButton.getHeight() * spaceBetweendials, dialSize, dialSize);
     resonanceSlider.setBounds(cutoffSlider.getX() + cutoffSlider.getWidth(), cutoffSlider.getY(), dialSize, dialSize);
     dampingSlider.setBounds(roomSizeSlider.getX() + roomSizeSlider.getWidth(), roomSizeSlider.getY(), dialSize, dialSize);
     driveSlider.setBounds(resonanceSlider.getX() + resonanceSlider.getWidth(), resonanceSlider.getY(), dialSize, dialSize);
     widthSlider.setBounds(dampingSlider.getX() + dampingSlider.getWidth(), dampingSlider.getY(), dialSize, dialSize);
-    drySlider.setBounds(widthSlider.getX() + filterModeButton.getWidth() * 2, driveSlider.getY(), sliderWidth, sliderHeight);
+    drySlider.setBounds(widthSlider.getX() + widthSlider.getWidth(), driveSlider.getY(), sliderWidth, sliderHeight);
     wetSlider.setBounds(drySlider.getX() + drySlider.getWidth(), drySlider.getY(), drySlider.getWidth(), drySlider.getHeight());
     
+    // Filter border position
+    filterBorder.setBounds(filterModeButton.getX() - filterModeButton.getWidth() / 2, filterModeButton.getY() - filterModeButton.getHeight(), filterModeButton.getWidth() * 2, filterModeButton.getHeight() * 5);
+    
+    // Adjust the width so the text doesn't get cut off
+    filterModeButton.changeWidthToFitText();
+    filterEngageButton.setBounds(filterModeButton.getX(), filterModeButton.getY() + filterModeButton.getHeight() * 2, filterModeButton.getWidth(), buttonWidth / 2);
+
     // Save the window size last before resized() finishes to recall it properly at construction
     saveWindowSize();
+}
+
+void Pastel_VerbAudioProcessorEditor::sliderValueChanged(juce::Slider *slider)
+{
+    // There's a bug where the fader thumb rectangle gets cut off when the value is at sliderMax - 3, so I added 3 to the range
+    // This makes sure the sliders stop at 100, though
+    if (slider == &drySlider || slider == &wetSlider)
+    {
+        if (slider->getValue() > 100.0)
+        {
+            slider->setValue(100.0);
+        }
+    }
 }
