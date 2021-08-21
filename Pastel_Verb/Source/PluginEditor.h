@@ -14,6 +14,8 @@
 #include "StyleSheet.h"
 #include "LV_Label.h"
 #include "LV_Fader.h"
+#include "LV_Toggle.h"
+
 
 //==============================================================================
 /**
@@ -63,10 +65,50 @@ private:
         &cutoffSlider, &resonanceSlider, &driveSlider, &roomSizeSlider, &dampingSlider, &widthSlider, &drySlider, &wetSlider
     };
         
-    juce::TextButton filterEngageButton, filterModeButton;
+    /**Buttons*/
+    juce::LV_Toggle filterEngageButton, filterModeButton;
+    
+    /**Button attachments*/
     std::unique_ptr <juce::AudioProcessorValueTreeState::ButtonAttachment> filterEngageButtonAttach, filterModeButtonAttach;
     
+    /**Initialize the buttons*/
+    void initButtons();
+    
+    /**Individual button props*/
+    void setSetFilterEngageButtonProps(juce::TextButton &button);
+    void setSetFilterModeButtonProps(juce::TextButton &button);
+
+    
+    /**Labels*/
     juce::LV_Label cutoffLabel, resonanceLabel, driveLabel, roomLabel, dampingLabel, widthLabel, dryLabel, wetLabel;
+        
+    /**Initialize labels*/
+    void initLabels();
+        
+    /**Container for labels*/
+    std::vector<juce::Label*> dialLabels =
+    {
+        &cutoffLabel, &resonanceLabel, &driveLabel, &roomLabel,
+        &dampingLabel, &widthLabel, &dryLabel, &wetLabel
+    };
+        
+    /**Text for the labels*/
+    std::vector<std::string> dialLabelTexts
+    {
+        "Cutoff", "Resonance", "Drive", "Room Size", "Damping", "Width", "Dry", "Wet"
+    };
+    
+    /**Shadows*/
+    /**Initialize shadows*/
+    void initShadows();
+    
+    /**Dial shadow*/
+    juce::DropShadow shadowProperties;
+    juce::DropShadowEffect dialShadow;
+    
+    /**Fader shadow*/
+    juce::DropShadow sliderShadowProperties;
+    juce::DropShadowEffect sliderShadow;
         
     
     // This reference is provided as a quick way for your editor to

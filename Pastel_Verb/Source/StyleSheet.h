@@ -77,7 +77,7 @@ public:
                 float angle = rotaryStartAngle + (sliderPos * (rotaryEndAngle - rotaryStartAngle));
                 
                 juce::Rectangle<float> dialArea (rx, ry, diameter, diameter);
-                g.setColour(juce::Colours::palevioletred.darker(1.0).darker(0.3)); //center
+                g.setColour(juce::Colour::fromRGB(179, 153, 212).darker(1.0f).darker(0.5f)); //center
                 g.fillEllipse(dialArea);
                 
                 g.setColour(juce::Colours::black.brighter(0.5f).withAlpha(0.75f)); //outline

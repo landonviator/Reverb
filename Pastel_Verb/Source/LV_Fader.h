@@ -25,10 +25,10 @@ public:
         setRange(-24.0, 24.0, 0.25);
         setDoubleClickReturnValue(true, 0.0);
         setTextValueSuffix(" dB");
-        setColour(juce::Slider::ColourIds::backgroundColourId, juce::Colour::fromRGB(35, 35, 35));
-        setColour(juce::Slider::ColourIds::trackColourId, juce::Colour::fromRGB(35, 35, 35));
+        setColour(juce::Slider::ColourIds::backgroundColourId, juce::Colour::fromRGB(15, 15, 15));
+        setColour(juce::Slider::ColourIds::trackColourId, juce::Colour::fromRGB(15, 15, 15));
         setColour(juce::Slider::ColourIds::textBoxOutlineColourId, juce::Colours::black.withAlpha(0.0f));
-        setColour(juce::Slider::ColourIds::textBoxTextColourId, juce::Colours::whitesmoke.withAlpha(0.5f));
+        setColour(juce::Slider::ColourIds::textBoxTextColourId, juce::Colours::whitesmoke.withAlpha(0.25f));
     }
     
 private:

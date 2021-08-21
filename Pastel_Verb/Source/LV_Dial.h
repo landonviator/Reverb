@@ -28,7 +28,7 @@ public:
         setColour(Slider::ColourIds::rotarySliderFillColourId, findColour(Slider::ColourIds::thumbColourId));
         setColour(Slider::ColourIds::rotarySliderOutlineColourId, Colour::fromRGB(35, 35, 35));
         setColour(Slider::ColourIds::textBoxOutlineColourId, Colours::black.withAlpha(0.0f));
-        setColour(Slider::ColourIds::textBoxTextColourId, Colours::whitesmoke.withAlpha(0.5f));
+        setColour(Slider::ColourIds::textBoxTextColourId, Colours::whitesmoke.withAlpha(0.25f));
     }
     
 private:

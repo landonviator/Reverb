@@ -12,6 +12,19 @@
       <FILE id="xTxuTl" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>
     </GROUP>
     <GROUP id="{A6284375-E6C2-9184-1B35-39B7ED83F731}" name="UI">
+      <GROUP id="{37042C37-3E59-AE38-B813-42B995DDBB35}" name="Shadow">
+        <FILE id="GxaC8A" name="InitShadows.cpp" compile="1" resource="0" file="Source/InitShadows.cpp"/>
+      </GROUP>
+      <GROUP id="{60B514FE-E37E-DDED-8F60-4A513F1B8580}" name="Labels">
+        <FILE id="pY502m" name="InitLabels.cpp" compile="1" resource="0" file="Source/InitLabels.cpp"/>
+      </GROUP>
+      <GROUP id="{711230F1-580A-6058-42DC-B046D1E535ED}" name="Buttons">
+        <FILE id="CyJXq8" name="FilterEngageButton.cpp" compile="1" resource="0"
+              file="Source/FilterEngageButton.cpp"/>
+        <FILE id="WoUTXc" name="FilterModeButton.cpp" compile="1" resource="0"
+              file="Source/FilterModeButton.cpp"/>
+        <FILE id="ORPm9x" name="InitButtons.cpp" compile="1" resource="0" file="Source/InitButtons.cpp"/>
+      </GROUP>
       <GROUP id="{EFFB48E1-CECA-BD54-D23B-2773AE9B6FA5}" name="Sliders">
         <FILE id="wKcmWr" name="InitSliders.cpp" compile="1" resource="0" file="Source/InitSliders.cpp"/>
       </GROUP>
@@ -19,9 +32,9 @@
         <FILE id="JVbt1n" name="LV_Dial.h" compile="0" resource="0" file="Source/LV_Dial.h"/>
         <FILE id="yfLNc8" name="LV_Fader.h" compile="0" resource="0" file="Source/LV_Fader.h"/>
         <FILE id="BE3LOd" name="LV_Label.h" compile="0" resource="0" file="Source/LV_Label.h"/>
+        <FILE id="gN8Owk" name="LV_Toggle.h" compile="0" resource="0" file="Source/LV_Toggle.h"/>
         <FILE id="WqFBEN" name="StyleSheet.cpp" compile="1" resource="0" file="Source/StyleSheet.cpp"/>
         <FILE id="wjBRQx" name="StyleSheet.h" compile="0" resource="0" file="Source/StyleSheet.h"/>
-        <FILE id="WU5wFy" name="ViatorDial.h" compile="0" resource="0" file="Source/ViatorDial.h"/>
       </GROUP>
       <FILE id="YeCWtP" name="CreateWindow.cpp" compile="1" resource="0"
             file="Source/CreateWindow.cpp"/>

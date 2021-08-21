@@ -135,9 +135,9 @@ void LV_FaderLAF::drawLinearSlider (Graphics& g, int x, int y, int width, int he
         if (! isTwoVal)
         {
             Rectangle<float> thumbRec;
-            thumbRec.setSize(static_cast<float> (height / 7.0), static_cast<float> (height / 14.0));
+            thumbRec.setSize(static_cast<float> (height / 4.0), static_cast<float> (height / 8.0));
             
-            g.setColour (Colour::fromRGB(179,72,78).darker(0.25));
+            g.setColour (Colour::fromRGB(120,121,118).darker(0.25));
             //g.setGradientFill(juce::ColourGradient::horizontal(juce::Colours::whitesmoke, juce::Colours::palevioletred.darker(1.0).darker(0.15), thumbRec));
 
             g.fillRoundedRectangle(thumbRec.withCentre(isThreeVal ? thumbPoint : maxPoint), 4.0f);

@@ -22,7 +22,7 @@ public:
     {
         setJustificationType(juce::Justification::centredTop);
         setColour(0x1000280, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
-        setColour(0x1000281, juce::Colour::fromFloatRGBA(1, 1, 1, 0.5));
+        setColour(0x1000281, juce::Colour::fromFloatRGBA(1, 1, 1, 0.25));
         setColour(0x1000282, juce::Colour::fromFloatRGBA(0, 0, 0, 0));
     }
     
