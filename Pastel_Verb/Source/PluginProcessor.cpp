@@ -133,14 +133,14 @@ juce::AudioProcessorValueTreeState::ParameterLayout Pastel_VerbAudioProcessor::c
     
     auto filterEngageParam = std::make_unique<juce::AudioParameterInt>(filterEngageId, filterEngageName, 0, 1, 1);
     auto filterModeParam = std::make_unique<juce::AudioParameterInt>(filterModeId, filterModeName, 0, 1, 0);
-    auto cutoffParam = std::make_unique<juce::AudioParameterInt>(cutoffSliderId, cutoffSliderName, 20, 20000, 1200);
+    auto cutoffParam = std::make_unique<juce::AudioParameterInt>(cutoffSliderId, cutoffSliderName, 20, 20000, 20000);
     auto resonanceParam = std::make_unique<juce::AudioParameterInt>(resonanceSliderId, resonanceSliderName, 0, 100, 0);
     auto driveParam = std::make_unique<juce::AudioParameterFloat>(driveSliderId, driveSliderName, 0.0f, 24.0f, 0.0f);
     auto roomSizeParam = std::make_unique<juce::AudioParameterInt>(roomSizeSliderId, roomSizeSliderName, 0, 100, 50);
     auto dampingParam = std::make_unique<juce::AudioParameterInt>(dampingSliderId, dampingSliderName, 0, 100, 50);
     auto widthParam = std::make_unique<juce::AudioParameterInt>(widthSliderId, widthSliderName, 0, 100, 100);
-    auto dryParam = std::make_unique<juce::AudioParameterInt>(drySliderId, drySliderName, 0, 100, 0);
-    auto wetParam = std::make_unique<juce::AudioParameterInt>(wetSliderId, wetSliderName, 0, 100, 50);
+    auto dryParam = std::make_unique<juce::AudioParameterInt>(drySliderId, drySliderName, 0, 100, 100);
+    auto wetParam = std::make_unique<juce::AudioParameterInt>(wetSliderId, wetSliderName, 0, 100, 30);
     
     params.push_back(std::move(filterEngageParam));
     params.push_back(std::move(filterModeParam));
