@@ -16,6 +16,8 @@
 #include "LV_Fader.h"
 #include "LV_Toggle.h"
 #include "LV_GroupComponent.h"
+#include "LV_Menu.h"
+
 
 
 //==============================================================================
@@ -123,7 +125,15 @@ private:
     /**Fader shadow*/
     juce::DropShadow sliderShadowProperties;
     juce::DropShadowEffect sliderShadow;
-        
+    
+    /**Preset menus*/
+    juce::LV_Menu presetMenu;
+    juce::PopupMenu spacesMenu, smallMenu, mediumMenu, largeMenu;
+    void setPresetMenuProps(juce::ComboBox &menu);
+    void setSpaceMenuProps(juce::PopupMenu &menu);
+    void setSmallMenuProps(juce::PopupMenu &menu);
+    void setMediumMenuProps(juce::PopupMenu &menu);
+    void setLargeMenuProps(juce::PopupMenu &menu);
     
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.

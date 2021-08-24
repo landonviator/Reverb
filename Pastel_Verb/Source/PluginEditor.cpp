@@ -23,6 +23,7 @@ Pastel_VerbAudioProcessorEditor::Pastel_VerbAudioProcessorEditor (Pastel_VerbAud
     initSliders();
     initLabels();
     initFilterBorder();
+    setPresetMenuProps(presetMenu);
     
     // Adjust the width so the text doesn't get cut off
     // why here? because
@@ -67,7 +68,7 @@ void Pastel_VerbAudioProcessorEditor::paint (juce::Graphics& g)
         g.setFont (9.0);
     }
     g.setColour (juce::Colours::whitesmoke.withAlpha(0.125f));
-    g.drawFittedText ("Pastel Verb v2.1.1", AudioProcessorEditor::getWidth() * 0.12, AudioProcessorEditor::getHeight() * 0.12, AudioProcessorEditor::getWidth(), AudioProcessorEditor::getHeight(), juce::Justification::topLeft, 1);
+    g.drawFittedText ("Pastel Verb v2.1.1", AudioProcessorEditor::getWidth() * 0.1, AudioProcessorEditor::getHeight() * 0.71, AudioProcessorEditor::getWidth(), AudioProcessorEditor::getHeight(), juce::Justification::topLeft, 1);
 }
 
 void Pastel_VerbAudioProcessorEditor::resized()
@@ -101,6 +102,9 @@ void Pastel_VerbAudioProcessorEditor::resized()
     // Adjust the width so the text doesn't get cut off
     filterModeButton.changeWidthToFitText();
     filterEngageButton.setBounds(filterModeButton.getX(), filterModeButton.getY() + filterModeButton.getHeight() * 2, filterModeButton.getWidth(), buttonWidth / 2);
+    
+    // Preset menu
+    presetMenu.setBounds(filterBorder.getX(), cutoffSlider.getY(), filterBorder.getWidth(), filterEngageButton.getHeight() / 1.25);
 
     // Save the window size last before resized() finishes to recall it properly at construction
     saveWindowSize();

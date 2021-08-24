@@ -14,6 +14,13 @@
       <FILE id="xTxuTl" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>
     </GROUP>
     <GROUP id="{A6284375-E6C2-9184-1B35-39B7ED83F731}" name="UI">
+      <GROUP id="{CD5DC20F-DDB2-B870-2C0A-C20AEECBFC29}" name="Menus">
+        <FILE id="gNqILU" name="LargeMenu.cpp" compile="1" resource="0" file="Source/LargeMenu.cpp"/>
+        <FILE id="rW9aD3" name="MediumMenu.cpp" compile="1" resource="0" file="Source/MediumMenu.cpp"/>
+        <FILE id="lQGPmC" name="PresetMenu.cpp" compile="1" resource="0" file="Source/PresetMenu.cpp"/>
+        <FILE id="GdDLad" name="SmallMenu.cpp" compile="1" resource="0" file="Source/SmallMenu.cpp"/>
+        <FILE id="J0mOIE" name="SpaceMenus.cpp" compile="1" resource="0" file="Source/SpaceMenus.cpp"/>
+      </GROUP>
       <GROUP id="{5B91E64D-FD81-E796-B9DE-FB78D9BDAC3B}" name="Borders">
         <FILE id="wi27PH" name="FilterBorder.cpp" compile="1" resource="0"
               file="Source/FilterBorder.cpp"/>
@@ -41,6 +48,7 @@
         <FILE id="MT5IN6" name="LV_GroupComponent.h" compile="0" resource="0"
               file="Source/LV_GroupComponent.h"/>
         <FILE id="BE3LOd" name="LV_Label.h" compile="0" resource="0" file="Source/LV_Label.h"/>
+        <FILE id="UFQYhM" name="LV_Menu.h" compile="0" resource="0" file="Source/LV_Menu.h"/>
         <FILE id="gN8Owk" name="LV_Toggle.h" compile="0" resource="0" file="Source/LV_Toggle.h"/>
         <FILE id="WqFBEN" name="StyleSheet.cpp" compile="1" resource="0" file="Source/StyleSheet.cpp"/>
         <FILE id="wjBRQx" name="StyleSheet.h" compile="0" resource="0" file="Source/StyleSheet.h"/>
