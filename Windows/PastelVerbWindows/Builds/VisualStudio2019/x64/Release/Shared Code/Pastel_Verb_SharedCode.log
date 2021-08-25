@@ -1,0 +1,316 @@
+﻿  CreateWindow.cpp
+  FilterBorder.cpp
+  FilterEngageButton.cpp
+  FilterModeButton.cpp
+  InitButtons.cpp
+  InitLabels.cpp
+  InitShadows.cpp
+  InitSliders.cpp
+  SaveWindowSize.cpp
+  SetTreeState.cpp
+  SliderProps.cpp
+  StyleSheet.cpp
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\CreateWindow.cpp(13,78): warning C4458: declaration of 'audioProcessor' hides class member
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.h(130,32): message : see declaration of 'Pastel_VerbAudioProcessorEditor::audioProcessor' (compiling source file ..\..\Source\CreateWindow.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\CreateWindow.cpp(27,90): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\CreateWindow.cpp(27,76): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\CreateWindow.cpp(27,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\CreateWindow.cpp(27,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\CreateWindow.cpp(33,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\CreateWindow.cpp(33,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\CreateWindow.cpp(39,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\CreateWindow.cpp(39,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitShadows.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\SaveWindowSize.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\SaveWindowSize.cpp(25,68): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\SaveWindowSize.cpp(26,70): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\SliderProps.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\FilterBorder.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\FilterModeButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitSliders.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\FilterModeButton.cpp(17,66): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitButtons.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\SetTreeState.cpp(19,85): warning C4244: 'argument': conversion from 'double' to 'SampleType', possible loss of data
+          with
+          [
+              SampleType=float
+          ]
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\SetTreeState.cpp(20,33): warning C4244: 'argument': conversion from 'double' to 'SampleType', possible loss of data
+          with
+          [
+              SampleType=float
+          ]
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\InitLabels.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\StyleSheet.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.cpp(58,50): warning C4244: 'argument': conversion from 'double' to 'ValueType', possible loss of data
+          with
+          [
+              ValueType=float
+          ]
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.cpp(57,50): warning C4244: 'argument': conversion from 'double' to 'ValueType', possible loss of data
+          with
+          [
+              ValueType=float
+          ]
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.cpp(61,140): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.cpp(66,46): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\SetTreeState.cpp(41,79): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\SetTreeState.cpp(42,77): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\SetTreeState.cpp(43,73): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\SetTreeState.cpp(44,74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\SetTreeState.cpp(45,74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\FilterEngageButton.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\FilterEngageButton.cpp)
+  PluginProcessor.cpp
+  PluginEditor.cpp
+  BinaryData.cpp
+  BinaryData2.cpp
+  include_juce_audio_basics.cpp
+  include_juce_audio_devices.cpp
+  include_juce_audio_formats.cpp
+  include_juce_audio_plugin_client_utils.cpp
+  include_juce_audio_processors.cpp
+  include_juce_audio_utils.cpp
+  include_juce_core.cpp
+  include_juce_data_structures.cpp
+  include_juce_dsp.cpp
+  include_juce_events.cpp
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\PluginProcessor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(116,56): warning C4100: 'index': unreferenced formal parameter
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(120,67): warning C4100: 'index': unreferenced formal parameter
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(125,83): warning C4100: 'newName': unreferenced formal parameter
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(125,56): warning C4100: 'index': unreferenced formal parameter
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(167,47): warning C4244: 'argument': conversion from 'double' to 'SampleType', possible loss of data
+          with
+          [
+              SampleType=float
+          ]
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(172,37): warning C4244: 'argument': conversion from 'double' to 'SampleType', possible loss of data
+          with
+          [
+              SampleType=float
+          ]
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(203,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(209,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(215,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(221,41): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(227,39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(243,85): warning C4244: 'argument': conversion from 'double' to 'SampleType', possible loss of data
+          with
+          [
+              SampleType=float
+          ]
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(244,33): warning C4244: 'argument': conversion from 'double' to 'SampleType', possible loss of data
+          with
+          [
+              SampleType=float
+          ]
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(267,79): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(268,77): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(269,73): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(270,74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(45,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(271,74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(46,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(47,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(48,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(54,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(55,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(62,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(43,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(71,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(72,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(73,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(74,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(87,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\StyleSheet.h(69,148): warning C4100: 'slider': unreferenced formal parameter (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginProcessor.cpp(307,99): warning C4100: 'midiMessages': unreferenced formal parameter
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\LV_Toggle.h(28,1): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\Source\PluginEditor.cpp)
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(30,188): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(56,196): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(56,154): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(56,116): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(56,68): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(62,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(70,120): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(70,78): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(85,84): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(85,59): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(85,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(85,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(86,160): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(89,111): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(90,98): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(95,103): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Source\PluginEditor.cpp(103,160): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  include_juce_graphics.cpp
+  include_juce_gui_basics.cpp
+  include_juce_gui_extra.cpp
+  Pastel_Verb_SharedCode.vcxproj -> C:\Users\lando\Documents\GitHub\Reverb\Windows\PastelVerbWindows\Builds\VisualStudio2019\x64\Release\Shared Code\PastelVerbWindows.lib
